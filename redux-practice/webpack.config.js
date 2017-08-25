@@ -9,7 +9,7 @@ module.exports = {
         app:[
             path.resolve(__dirname,"./src/index.js"),
             'webpack/hot/only-dev-server',
-            "webpack-dev-server/client?http://127.0.0.1:9090"
+            "webpack-dev-server/client?http://127.0.0.1:9091"
         ],
         vendor: [ 'react', 'react-dom', 'react-redux', 'redux', 'redux-immutable', 'immutable']
     },
@@ -22,7 +22,7 @@ module.exports = {
         extensions:['.js','.json','.jsx']
     },
     devServer: {
-        port:9090
+        port:9091
     },
     module:{
         loaders:[

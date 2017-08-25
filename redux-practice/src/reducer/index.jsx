@@ -12,7 +12,7 @@ const list = Immutable.fromJS([
 ])
 const Todos = createReducer(list,{
     [TASK_ADD](state,action) {
-        return state.set('name',action.name)
+        return state.setIn(['0','name'],action.name)
     }
 })
 
