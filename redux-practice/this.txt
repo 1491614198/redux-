@@ -1,0 +1,7 @@
+this的6种方法
+.bind(this)
+()=>this.handeClick()
+this.handeClick=this.handeClick.bind(this)
+::this.handeClick
+handeClick:function(e)=>{}
+可以直接在constructor中this.handeClick={}
