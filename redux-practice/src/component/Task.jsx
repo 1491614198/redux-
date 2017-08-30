@@ -19,12 +19,19 @@ class Task extends Component{
         e.preventDefault()
         const b = e.target.value.trim();
         if(!!b){
-            const {onSave} =this.props
-            onSave(b)
+            const {onSave,id} =this.props
+            onSave(id,b)
+        }
+    }
+    handleSubmit(){
+        const c = this.refs.top.value
+        if(!!c.trim()){
+            const{onAdd} = this.props
+            onAdd(c)
         }
     }
     render(){
-        const {name} =this.props;
+        const {name,value} =this.props;
         return(
             <div>
                 <input type="text" placeholder="你的我的" onChange={::this.change}/>
@@ -32,6 +39,11 @@ class Task extends Component{
                 {/*<input type="text" placeholder="你的我的" onChange={(e)=>{this.change(e)}}/>*/}
                 {/*／／this的6种语法*/}
                 {name}
+
+                <form onSubmit={::this.handleSubmit}>
+                    <input type="text" ref="top" defaultValue={value}/>
+                    <button type="submit">Add</button>
+                </form>
             </div>
         )
     }

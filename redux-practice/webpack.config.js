@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
 module.exports = {
+    devtool: 'inline-source-map',
     entry: {
         app:[
             path.resolve(__dirname,"./src/index.js"),
@@ -22,6 +23,7 @@ module.exports = {
         extensions:['.js','.json','.jsx']
     },
     devServer: {
+        disableHostCheck: true,
         port:9091
     },
     module:{
